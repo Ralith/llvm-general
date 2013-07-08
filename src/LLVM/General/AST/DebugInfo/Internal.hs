@@ -30,6 +30,9 @@ class DebugMetadata a where
 class DebugMetadataOp a where
     toOp :: a -> Operand
 
+class Scope a where
+    fromScope :: a -> MetadataNode
+
 instance DebugMetadataOp String where
     toOp = MetadataStringOperand
 

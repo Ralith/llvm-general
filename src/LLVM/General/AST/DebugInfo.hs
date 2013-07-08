@@ -3,10 +3,11 @@ module LLVM.General.AST.DebugInfo where
 import LLVM.General.AST.Operand
 
 import LLVM.General.AST.DebugInfo.Internal
-import LLVM.General.AST.DebugInfo.Scope
+import LLVM.General.AST.DebugInfo.CompileUnit
+import LLVM.General.AST.DebugInfo.Location
 
 compileUnitMetadata :: CompileUnit -> MetadataNode
 compileUnitMetadata = toMetadata
 
-locationMetadata :: Location -> MetadataNode
+locationMetadata :: Scope a => Location a -> MetadataNode
 locationMetadata = toMetadata

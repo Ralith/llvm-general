@@ -90,7 +90,9 @@ library
     LLVM.General.AST.DebugInfo.Type
     LLVM.General.AST.DebugInfo.File
     LLVM.General.AST.DebugInfo.Global
-    LLVM.General.AST.DebugInfo.Scope
+    LLVM.General.AST.DebugInfo.Location
+    LLVM.General.AST.DebugInfo.CompileUnit
+    LLVM.General.AST.DebugInfo.Subprogram
     LLVM.General.AST.DebugInfo
     LLVM.General.CodeGenOpt
     LLVM.General.CodeModel
