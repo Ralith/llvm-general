@@ -87,6 +87,11 @@ library
     LLVM.General.AST.RMWOperation
     LLVM.General.AST.Type
     LLVM.General.AST.Visibility
+    LLVM.General.AST.DebugInfo.Type
+    LLVM.General.AST.DebugInfo.File
+    LLVM.General.AST.DebugInfo.Global
+    LLVM.General.AST.DebugInfo.Scope
+    LLVM.General.AST.DebugInfo
     LLVM.General.CodeGenOpt
     LLVM.General.CodeModel
     LLVM.General.CommandLine
@@ -104,6 +109,7 @@ library
     Control.Monad.AnyCont
     Control.Monad.AnyCont.Class
     Control.Monad.Trans.AnyCont
+    LLVM.General.AST.DebugInfo.Internal
     LLVM.General.Internal.Atomicity
     LLVM.General.Internal.Attribute
     LLVM.General.Internal.BasicBlock
