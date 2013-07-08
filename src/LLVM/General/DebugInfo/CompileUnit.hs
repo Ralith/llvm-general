@@ -1,20 +1,20 @@
-module LLVM.General.AST.DebugInfo.CompileUnit where
+module LLVM.General.DebugInfo.CompileUnit where
 
 import Data.Word
 
 import LLVM.General.AST.Operand
-import LLVM.General.AST.DebugInfo.Internal
-import LLVM.General.AST.DebugInfo.File (File)
-import LLVM.General.AST.DebugInfo.Global (Global)
-import LLVM.General.AST.DebugInfo.Subprogram (Subprogram)
+import LLVM.General.Internal.DebugInfo
+import LLVM.General.DebugInfo.File (File)
+import LLVM.General.DebugInfo.Global (Global)
+import LLVM.General.DebugInfo.Subprogram (Subprogram)
 
 data CompileUnit = CompileUnit
     { file :: File
-    , langID :: Word32
+    , langID :: Word
     , compiler :: String
     , optimized :: Bool
     , compileFlags :: String
-    , runtimeVersion :: Word32
+    , runtimeVersion :: Word
 --    , enums :: [Enum]
 --    , retainedTypes :: [RetainedType]
     , subprograms :: [Subprogram]
@@ -39,11 +39,11 @@ instance DebugMetadata CompileUnit where
                             })
         = MetadataNode [ toOp dwTagCompileUnit
                        , toOp file
-                       , toOp langID
+                       , toOp (fromIntegral langID :: Word32)
                        , toOp compiler
                        , toOp optimized
                        , toOp compileFlags
-                       , toOp runtimeVersion
+                       , toOp (fromIntegral runtimeVersion :: Word32)
                        , nullOp -- , toOp enums
                        , nullOp -- , toOp retainedTypes
                        , toOp subprograms

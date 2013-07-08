@@ -1,13 +1,13 @@
-module LLVM.General.AST.DebugInfo.Type where
+module LLVM.General.DebugInfo.Type where
 
 import Data.Word
 
 import LLVM.General.AST.Operand
-import LLVM.General.AST.DebugInfo.Internal
+import LLVM.General.Internal.DebugInfo
 
 data Type = BasicType { name :: String
-                      , size :: Word64
-                      , align :: Word64
+                      , size :: Word
+                      , align :: Word
                       , encoding :: Encoding
                       }
 
@@ -17,8 +17,8 @@ instance DebugMetadata Type where
                    , nullOp, nullOp
                    , toOp name
                    , toOp (0 :: Word32)
-                   , toOp size
-                   , toOp align
+                   , toOp (fromIntegral size :: Word64)
+                   , toOp (fromIntegral align :: Word64)
                    , toOp (0 :: Word32)
                    , toOp (0 :: Word32)
                    , toOp encoding

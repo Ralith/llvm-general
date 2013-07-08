@@ -1,10 +1,10 @@
-module LLVM.General.AST.DebugInfo where
+module LLVM.General.DebugInfo where
 
 import LLVM.General.AST.Operand
 
-import LLVM.General.AST.DebugInfo.Internal
-import LLVM.General.AST.DebugInfo.CompileUnit
-import LLVM.General.AST.DebugInfo.Location
+import LLVM.General.Internal.DebugInfo
+import LLVM.General.DebugInfo.CompileUnit
+import LLVM.General.DebugInfo.Location
 
 compileUnitMetadata :: CompileUnit -> MetadataNode
 compileUnitMetadata = toMetadata

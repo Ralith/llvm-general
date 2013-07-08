@@ -1,18 +1,18 @@
-module LLVM.General.AST.DebugInfo.Subprogram where
+module LLVM.General.DebugInfo.Subprogram where
 
 import Data.Word
 
 import LLVM.General.AST.Name
 import LLVM.General.AST.Operand
 import qualified LLVM.General.AST.Constant as C
-import LLVM.General.AST.DebugInfo.Internal
-import LLVM.General.AST.DebugInfo.File (File)
-import LLVM.General.AST.DebugInfo.Type (Type)
+import LLVM.General.Internal.DebugInfo
+import LLVM.General.DebugInfo.File (File)
+import LLVM.General.DebugInfo.Type (Type)
 
 data Subprogram = Subprogram { name :: String
                              , linkageName :: String
                              , spFile :: File
-                             , spLine :: Word32
+                             , spLine :: Word
                              , ty :: Type
                              , isLocal :: Bool
                              , isDefinition :: Bool
@@ -31,7 +31,7 @@ instance DebugMetadata Subprogram where
                      , toOp name
                      , toOp name
                      , toOp linkageName
-                     , toOp spLine
+                     , toOp (fromIntegral spLine :: Word32)
                      , toOp ty
                      , toOp isLocal
                      , toOp isDefinition
@@ -42,7 +42,7 @@ instance DebugMetadata Subprogram where
                      , nullOp
                      , nullOp
                      , nullOp
-                     , toOp spLine
+                     , toOp (fromIntegral spLine :: Word32)
                      ]
 
 instance Scope Subprogram where

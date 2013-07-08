@@ -1,5 +1,5 @@
 {-# LANGUAGE UndecidableInstances, OverlappingInstances #-}
-module LLVM.General.AST.DebugInfo.Internal where
+module LLVM.General.Internal.DebugInfo where
 
 import LLVM.General.AST.Operand
 import qualified LLVM.General.AST.Constant as C

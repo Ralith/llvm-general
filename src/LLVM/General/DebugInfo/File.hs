@@ -1,7 +1,7 @@
-module LLVM.General.AST.DebugInfo.File where
+module LLVM.General.DebugInfo.File where
 
 import LLVM.General.AST.Operand
-import LLVM.General.AST.DebugInfo.Internal
+import LLVM.General.Internal.DebugInfo
 
 data File = File { name :: FilePath, directory :: FilePath }
 

@@ -87,13 +87,6 @@ library
     LLVM.General.AST.RMWOperation
     LLVM.General.AST.Type
     LLVM.General.AST.Visibility
-    LLVM.General.AST.DebugInfo.Type
-    LLVM.General.AST.DebugInfo.File
-    LLVM.General.AST.DebugInfo.Global
-    LLVM.General.AST.DebugInfo.Location
-    LLVM.General.AST.DebugInfo.CompileUnit
-    LLVM.General.AST.DebugInfo.Subprogram
-    LLVM.General.AST.DebugInfo
     LLVM.General.CodeGenOpt
     LLVM.General.CodeModel
     LLVM.General.CommandLine
@@ -106,12 +99,19 @@ library
     LLVM.General.Target
     LLVM.General.Target.Options
     LLVM.General.Transforms
+    LLVM.General.DebugInfo.Type
+    LLVM.General.DebugInfo.File
+    LLVM.General.DebugInfo.Global
+    LLVM.General.DebugInfo.Location
+    LLVM.General.DebugInfo.CompileUnit
+    LLVM.General.DebugInfo.Subprogram
+    LLVM.General.DebugInfo
 
   other-modules:
     Control.Monad.AnyCont
     Control.Monad.AnyCont.Class
     Control.Monad.Trans.AnyCont
-    LLVM.General.AST.DebugInfo.Internal
+    LLVM.General.Internal.DebugInfo
     LLVM.General.Internal.Atomicity
     LLVM.General.Internal.Attribute
     LLVM.General.Internal.BasicBlock
